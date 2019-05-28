@@ -34,6 +34,5 @@ spec:
       targetPort: 8080
     selector:
       app: hello-app
-      tier: web
     sessionAffinity: None
     type: NodePort
