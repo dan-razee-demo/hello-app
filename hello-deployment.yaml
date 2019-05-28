@@ -36,4 +36,4 @@ spec:
       app: hello-app
       tier: web
     sessionAffinity: None
-    type: LoadBalancer
+    type: NodePort
