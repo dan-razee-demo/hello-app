@@ -23,7 +23,7 @@ spec:
   kind: Service
   metadata:
     labels:
-      app: hello-app
+      run: hello-app
       tier: web
     name: hello-app
     namespace: default
@@ -33,6 +33,6 @@ spec:
       protocol: TCP
       targetPort: 8080
     selector:
-      app: hello-app
+      run: hello-app
     sessionAffinity: None
     type: NodePort
