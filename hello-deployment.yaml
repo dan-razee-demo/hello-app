@@ -18,3 +18,22 @@ spec:
       containers:
       - image: danberg/hello-app:latest
         name: hello-app
+---
+- apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: hello-app
+      tier: web
+    name: hello-app
+    namespace: default
+  spec:
+    ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: hello-app
+      tier: web
+    sessionAffinity: None
+    type: LoadBalancer
