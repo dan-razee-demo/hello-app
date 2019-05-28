@@ -14,8 +14,8 @@ jobs:
     - stage: build docker image
       script:
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-      - docker build --rm -t danberg/hello:${TRAVIS_COMMIT} --build-arg this_build_id=${TRAVIS_BUILD_ID} --build-arg this_build_sha=${TRAVIS_COMMIT} .
+      - docker build --rm -t danberg/hello-app:${TRAVIS_COMMIT} --build-arg this_build_id=${TRAVIS_BUILD_ID} --build-arg this_build_sha=${TRAVIS_COMMIT} .
       - docker images
     - stage: push docker image
       script: 
-      - docker push danberg/hello:${TRAVIS_COMMIT}
+      - docker push danberg/hello-app:${TRAVIS_COMMIT}
