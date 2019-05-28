@@ -3,11 +3,9 @@ services:
 
 jobs:
   include:
-    - stage: build docker image
+    - stage: build and push docker image
       script:
       - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
       - docker build --rm -t $DOCKER_USERNAME/hello-app:${TRAVIS_BUILD_ID} .
       - docker images
-    - stage: push docker image
-      script: 
       - docker push $DOCKER_USERNAME/hello-app:${TRAVIS_BUILD_ID}
