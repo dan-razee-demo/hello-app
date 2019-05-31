@@ -25,6 +25,7 @@ spec:
     labels:
       run: hello-app
       tier: web
+      kapitan.razee.io/mode: StrategicMergePatch
     name: hello-app
     namespace: default
   spec:
